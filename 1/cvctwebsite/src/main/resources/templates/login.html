@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CVCT | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link href="/css/styles.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url("../images/formlogin.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 90%;
+            background-position: center;
+            font-family: "Maven Pro", sans-serif;
+            overflow: hidden;
+        }
+        h3 {
+            font-size: 40px;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .winput
+        {
+            padding:8px;
+            display:block;
+            border:none;
+            border-bottom:1px solid #ccc;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding-top: 160px;">
+        <img class="mx-auto h-28 w-auto" src="../images/cvcthome.png" alt="CVCT" style="align-content: center; width: 160px; height: auto" />
+        <h3 class="mt-20 text-center text-2xl font-bold leading-5 tracking-tight text-gray-900">LOGIN</h3>
+    </div>
+    <div class="container">
+        <div th:if="${status}" class="alert alert-success">
+            <h5 th:text="${status}"></h5>
+        </div>
+
+        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <form class="space-y-6" th:action="@{/login}" method="post">
+                <div>
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                    <div class="mt-2">
+                        <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between">
+                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                        <div class="text-sm">
+                            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" name="login_now_btn" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+                </div>
+            </form>
+
+            <p class="mt-10 text-center text-sm text-gray-500">
+                Not a member?
+                <a th:href="@{/register}" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Register Here!</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

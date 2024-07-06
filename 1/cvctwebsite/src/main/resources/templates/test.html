@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:util="urn:java:org.thymeleaf.extras.utility.UtilityDialect">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVCT | TEST </title>
+    <link href="../css/soalStyles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <script>
+        let currentAttempt = 1;
+        const totalAttempts = 20;
+        let timer;
+
+        function resetTimer() {
+            let timeLeft = 45;
+            document.getElementById("timer").textContent = timeLeft;
+            clearInterval(timer);
+            timer = setInterval(function() {
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    handleFormSubmit(null); // Auto-submit when time runs out
+                } else {
+                    document.getElementById("timer").textContent = --timeLeft;
+                }
+            }, 1000);
+        }
+
+        function fetchRandomQuestion() {
+            fetch("/api/random-question")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("randomQuestion").textContent = data.questionName;
+                });
+        }
+
+        function handleFormSubmit(event) {
+            if (event) event.preventDefault();
+
+            const form = document.getElementById("soalForm");
+            const formData = new FormData(form);
+
+            let fluency = 0;
+            formData.forEach((value, key) => {
+                if (value.trim() !== "") {
+                    fluency++;
+                }
+            });
+
+            document.getElementById("fluency").value = fluency;
+
+            const answers = {};
+            formData.forEach((value, key) => {
+                answers[key] = value;
+            });
+
+            fetch("/api/store-answers", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(answers)
+            }).then(response => response.json())
+              .then(data => {
+                  if (currentAttempt < totalAttempts) {
+                      currentAttempt++;
+                      form.reset();
+                      fetchRandomQuestion();
+                      resetTimer();
+                  } else {
+                      const queryParams = new URLSearchParams(answers).toString();
+                      window.location.href = `/result?${queryParams}`;
+                  }
+              });
+
+            return false;
+        }
+
+        window.onload = function() {
+            resetTimer();
+        }
+    </script>
+</head>
+<body>
+    <header th:replace="qheader :: qheader"></header>
+    <div>
+        <div class="row contohsoal">
+            <div style="text-align: center; width: 100%; font-size: 18px; font-weight: 700;">
+                <p>SOAL</p>
+            </div>
+        </div>
+        <div class="row insdetail">
+            <div>
+                <p class="soal">Silahkan mengisi kolom jawaban dengan kata-kata yang dianggap berhubungan atau berkaitan erat dengan kata berikut:</p>
+                <p class="soalkata" id="randomQuestion" th:text="${randomQuestion}">BARU</p>
+                <div class="jawaban">
+                    <h2 style="text-align: center">JAWABAN</h2>
+                    <p style="text-align: center; font-weight: bold;">Waktu Tersisa: 00:<span id="timer">45</span> detik</p>
+                    <form id="soalForm" th:action="@{/test}" method="post" onsubmit="return handleFormSubmit(event)">
+                        <div th:each="i : ${#numbers.sequence(1, numQuestions)}" class="rowjwb">
+                            <div class="num">
+                                <label th:for="'jwb' + ${i}" th:text="${i + '.'}"></label>
+                            </div>
+                            <div class="jwb">
+                                <input type="text" th:id="'jwb' + ${i}" th:name="'jwb' + ${i}" placeholder="Write your Answer here...">
+                            </div>
+                        </div>
+                        <input type="hidden" id="fluency" name="fluency" value="0">
+                        <div style="text-align: center; margin-top: 30px;">
+                            <input class="btnCont" type="submit" value="Continue" id="btnContinue">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

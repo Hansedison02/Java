@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+    <title>CVCT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link href="/css/styles.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #B4B37E;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+            padding: 5px 10px;
+            font-family: Poppins, sans-serif;
+        }
+
+        .menu .home
+        {
+            text-decoration: none; 
+            color: #EC5C01;
+        }
+
+        .column {
+            float: left;
+            height: 130px;
+        }
+
+        .column .menu {
+            float: left;
+            position: static;
+            font-size: 30px;
+            font-weight: 400;
+            text-align: center;
+            word-wrap: break-word;
+            width: 225px;
+        }
+
+        .atext
+        {
+            text-decoration: none; 
+            color: #319634;
+            transition: 0.3s;
+            font-family: "Maven Pro", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+        }
+        .atext:hover
+        {
+            color: #EC5C01;
+        }
+
+        .active
+        {
+            color: #EC5C01;
+        }
+
+        .button-34 {
+            background: #319634;
+            border-radius: 999px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 24px;
+            padding: 10px 24px;
+            user-select: none;
+            width: fit-content;
+            word-break: break-word;
+            border: 0;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .button-34:hover {
+            opacity: 0.75;
+            font-weight: 700;
+        }
+
+        .bg1 {
+            background-image: url("../images/Header.png");
+            overflow: hidden;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-top: -20px;
+            height: auto;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px 30px 30px 20px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            float: left;
+            clear: both;
+        }
+
+        .content .text {
+            flex: 1;
+            font-family: "Maven Pro", sans-serif;
+        }
+
+        .content .image {
+            flex: 1;
+            display: inline-block;
+            justify-content: center;
+        }
+        .image{
+            width: 700px !important;
+            display: inline-block;
+        }
+        .content h1 {
+            font-family: "Maven Pro", sans-serif;
+            font-weight: 700;
+            font-size: 55px;
+        }
+
+        .content p {
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .content a.buttontake {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 24px;
+            background-color: #319634;
+            color: #FCFCFD;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: 400;
+            border-radius: 999px;
+        }
+
+        .content a.buttontake:hover {
+            opacity: 0.75;
+            font-weight: 700;
+            transition: 0.3s ease;
+        }
+
+        .content img {
+            max-width: 600%;
+            height: auto;
+            border-radius: 10px;
+            width: 1200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class='bg1'>
+        <th:block th:insert="~{header :: header}"></th:block>
+    </div>
+    <div class='content'>
+        <div class="text">
+            <h1>Contextual Verbal Creativity Test</h1>
+            <p>Tes kreativitas verbal pertama berbentuk digital yang tersedia secara gratis dan dapat dipergunakan oleh kalangan umum.</p>
+            <a th:href="@{/login}" class="buttontake">TAKE A TEST</a>
+        </div>
+        <div class="image">
+            <img src="../images/Home_Logo.png" alt="Home Logo">
+        </div>
+    </div>
+</body>
+</html>

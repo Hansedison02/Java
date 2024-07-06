@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CVCT | About Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f0f0E5;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+            padding: 5px 10px;
+            font-family: Poppins, sans-serif;
+        }
+
+        .menu .home
+        {
+            text-decoration: none; 
+            color: #EC5C01;
+        }
+
+        .column {
+            float: left;
+            height: 130px;
+            font-family: "Maven Pro", sans-serif;
+        }
+
+        .column .menu {
+            float: left;
+            position: static;
+            font-size: 30px;
+            font-weight: 400;
+            text-align: center;
+            word-wrap: break-word;
+            width: 225px;
+        }
+
+        .bg2 {
+            background-color: #B4B37E;
+            background-size: 400px 300px auto;
+            margin: 0px 0px 0px 20px;
+            padding: 20px 0px 60px 20px;
+            border-radius: 10px 10px 10px 10px;
+
+        }
+        
+        .atext
+        {
+            text-decoration: none; 
+            color: #319634;
+            transition: 0.3s;
+            font-family: "Maven Pro", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+        }
+        .atext:hover
+        {
+            color: #EC5C01;
+        }
+
+        .active
+        {
+            color: #EC5C01;
+        }
+
+        .button-34 {
+            background: #319634;
+            border-radius: 999px;
+            box-sizing: border-box;
+            color: #f0f0E5;
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 24px;
+            padding: 10px 24px;
+            user-select: none;
+            width: fit-content;
+            word-break: break-word;
+            border: 0;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .button-34:hover {
+            opacity: 0.75;
+            font-weight: 700;
+        }
+
+        .bg1 {
+            background-image: url("../images/Header.png");
+            overflow: hidden;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-top: -20px;
+            height: auto;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px 30px 30px 20px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            float: left;
+            clear: both;
+        }
+
+        .content .text {
+            flex: 1;
+            font-family: "Maven Pro", sans-serif;
+        }
+
+        .content .image {
+            flex: 1;
+            display: inline-block;
+            justify-content: center;
+        }
+        .image{
+            width: 700px !important;
+            display: inline-block;
+        }
+        .content h1 {
+            font-family: "Maven Pro", sans-serif;
+            font-weight: 700;
+            font-size: 55px;
+        }
+
+        .content p {
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .content a.buttontake {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 24px;
+            background-color: #319634;
+            color: #f0f0E5;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: 400;
+            border-radius: 999px;
+        }
+
+        .content a.buttontake:hover {
+            opacity: 0.75;
+            font-weight: 700;
+        }
+        .article1
+        {
+            text-align: left; 
+            font-size: 25px; 
+            font-weight: 300; 
+            word-wrap: break-word; 
+            color:#F0F0E5;
+        }
+
+        .image1 img{
+            max-width: 600%;
+            height: auto;
+            border-radius: 10px;
+            width: 400px;
+            height: auto;
+            align-items: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg3">
+    <div class='bg1'>
+        <th:block th:insert="~{header :: header}"></th:block>
+    </div>
+    <div class="column">
+        <section style="width:75%; float: right;">
+            <article style="text-align: left;">
+                <h1 style="font-weight: 700; font-size: 32px; text-align: center; padding-top: 20px;">WHAT IS VERBAL CREATIVITY?</h1>
+                <p style="font-size: 25px; font-weight: 400">
+                    <ul style="font-size: 25px; font-weight: 400">
+                        <li>
+                            Kemampuan membentuk ide atau gagasan baru, serta menggabungkan gagasan tersebut menjadi suatu gagasan yang baru berdasarkan informasi atau unsur yang ada, bentuk kreativitas ini dapat mencerminkan kelancaran, keluwesan dan orisinalitas dalam berpikir divergen seseorang yang dinyatakan secara verbal.
+                        </li>
+                    </ul>
+                </p>
+                <div class="image1">
+                    <img src="../images/About_Vector1.png" alt="Home Logo">
+                </div>
+            </article>
+        </section>
+    </div>
+    <div class="column">
+        <div><br><br><br></div>
+        <div class="bg2">
+            <section class="bg2" style="width:85%; float: right; padding-right: 50px">
+                <article class="article1" style="text-align: left; font-size: 25px; font-weight: 300; word-wrap: break-word; color:#FBFBFC;">
+                    <p>Terdapat 4 komponen yang mempengaruhi <strong> Contextual Verbal Creativity Test</strong> yaitu:</p>
+                    <ul>
+                        <li><strong>Fluency</strong> dikaitkan dengan kuantitas dari ide-ide yang dimiliki oleh individu.</li>
+                        <li><strong>Flexibility</strong> dikaitkan dengan kuantitas dari variasi ide yang dimiliki oleh individu.</li>
+                        <li><strong>Originality</strong> dikaitkan dengan kemampuan individu untuk memikirkan produk atau solusi yang bersifat unik dan baru.</li>
+                        <li><strong>Elaboration</strong> dikaitkan dengan kemampuan individu untuk menyertakan informasi tambahan yang memiliki relevansi terhadap sebuah ide.</li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVCT | Example</title>
+    <link href="../css/soalStyles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <header th:replace="qheader :: qheader"></header>
+    <div>
+        <div class="row contohsoal">
+            <div style="text-align: center; width: 100%; font-size: 18px; font-weight: 700;">
+                <p>Contoh Soal dan Jawaban</p>
+            </div>
+        </div>
+        <div class="row insdetail">
+            <div>
+                <p class="soal">Silahkan mengisi kolom jawaban dengan kata-kata yang dianggap berhubungan atau berkaitan erat dengan kata berikut: </p>
+                <p class="soalkata">BARU</p>
+                <div class="jawaban">
+                    <h2 style="text-align: center">JAWABAN</h2>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb1">1.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb1" name="jwb1" value="baju putih">
+                        </div>                            
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb2">2.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb2" name="jwb2" value="bersih">
+                        </div>  
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb3">3.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb3" name="jwb3" value="enak dimakan">
+                        </div>                            
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb4">4.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb4" name="jwb4" value="fresh">
+                        </div>  
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb5">5.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb5" name="jwb5" value="pagi hari yang cerah">
+                        </div>                            
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb6">6.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb6" name="jwb6" value="ide">
+                        </div>  
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb7">7.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb7" name="jwb7" value="produk mahal">
+                        </div>                            
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb8">8.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb8" name="jwb8" value="teknologi">
+                        </div>  
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb9">9.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb9" name="jwb9" value="berkembang">
+                        </div>                            
+                    </div>
+                    <div class="rowjwb">
+                        <div class="num">
+                            <label for="jwb10">10.</label>
+                        </div>
+                        <div class="jwb">
+                            <input type="text" id="jwb10" name="jwb10" value="asing">
+                        </div>  
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <input class="btnCont" type="submit" value="Start the Test" id="btnContinue" th:onclick="|window.location = '@{/test}'|">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

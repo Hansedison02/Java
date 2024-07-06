@@ -1,0 +1,126 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Oct 23, 2023, 11:39:54 PM
+    Author     : LENOVO
+*/
+body {
+    font-family: "Maven Pro";
+    background: #FF8345;
+    margin: 0;
+    padding: 0;
+}
+
+.row {          
+    display: flex;
+    margin: 2em 0 0 0;
+}
+
+.row.contohsoal {
+    text-align: center;
+    background: linear-gradient(180deg, #CDCC90 0%, #c5c48b 100%);
+    border-radius: 10px;
+    position: relative;
+    margin: 1em 7em;
+    color: #2c2f2f;
+}
+
+.row.insdetail {
+    background: linear-gradient(180deg, #CDCC90 0%, #9A996C 100%);
+    border-radius: 10px;
+    height: fit-content;
+    position: relative;
+    margin: 1em 7em 0;
+    align-self: center;
+    padding: 3em;
+}
+
+.soal {
+    text-align: justify; 
+    color: #2c2f2f; 
+    font-size: 24px; 
+    font-weight: 500; 
+    word-wrap: break-word
+}
+
+.soalkata {
+    width: 300px;
+    background-color: #FFDE59;
+    text-align: center;
+    font-size: 30px; 
+    font-weight: 800; 
+    padding: 5px 1em;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+.jawaban {
+    width: 100%;
+    background: #FFE6CD;
+    border-radius: 10px;
+    height: fit-content;
+    position: relative;
+    margin: 0 0;
+    align-self: center;
+    padding: 2em 25px;
+}
+
+.tmr {
+    width: 175px;
+    height: 50px;
+    background-color: red;
+    font-size: 25px;
+    border-radius: 99px;
+    text-align: center;
+    padding: 5px;
+    float: right;
+}
+
+input[type=text], select, textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-size: 15px;
+}
+
+input[type=submit] {
+    background-color: #319634;
+    color: #FCFCFD;
+    text-decoration: none;
+    padding: 12px 20px;
+    border: #8795A2;
+    cursor: pointer;
+    width: 50%;
+    font-family: "Maven Pro";
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover {
+    opacity: 0.75;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.rowjwb {
+    margin-bottom: 15px;
+}
+
+.num {
+    width: 8%;
+    margin-top: 6px;
+    float: left;
+    text-align: center;
+    padding: 6px;
+    font-size: 20px;
+}
+
+.jwb {
+    width: 100%;
+    margin-top: 6px;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <title>Users List</title>
+    <style>
+        body {
+            font-family: "Maven Pro", sans-serif;
+            background: #FF8345;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 2em auto;
+            background: #FFF;
+            border-radius: 10px;
+            padding: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #FF8345;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 2em;
+            position: inherit;
+        }
+
+        th, td {
+            padding: 1em;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #FFA77A;
+            color: #333333;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .form-group {
+            margin-bottom: 1em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: .5em;
+            color: #333333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: .5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            padding: .5em 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF8345;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #CC6838;
+        }
+
+        .delete-button {
+            background-color: #CC6838;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: .5em 1em;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background-color: #FF8345;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Users List</h1>
+        
+        <!-- Add User Form -->
+        <form th:action="@{/users/add}" th:object="${newUser}" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" th:field="*{username}" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" th:field="*{password}" required />
+            </div>
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" th:field="*{fname}" required />
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" th:field="*{lname}" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" th:field="*{email}" required />
+            </div>
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <input type="text" id="role" th:field="*{role}" required />
+            </div>
+            <div class="form-group">
+                <label for="institute">Institute:</label>
+                <input type="text" id="institute" th:field="*{institute}" required />
+            </div>
+            <div class="form-group">
+                <button type="submit">Add User</button>
+            </div>
+            
+        <!-- Users Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Institute</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.username}"></td>
+                    <td th:text="${user.fname}"></td>
+                    <td th:text="${user.lname}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.role}"></td>
+                    <td th:text="${user.institute}"></td>
+                    <td>
+                        <form th:action="@{'/users/delete/' + ${user.id}}" method="post">
+                            <button class="delete-button" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</body>
+</html>

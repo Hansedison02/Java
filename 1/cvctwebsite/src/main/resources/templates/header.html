@@ -1,0 +1,21 @@
+<header th:fragment="header">
+    <div class="column logo-container" style="width:35%; background-image: url('@{/images/Header.png}'); background-size: cover; background-position: center;">
+        <a th:href="@{/}">
+            <img th:src="@{/images/cvcthome.png}" class="logo" alt="alt"/>
+        </a>
+    </div>
+    <div class="column" style="width:65%; display: flex; justify-content: space-around; align-items: center;">
+        <div class="menu">
+            <a th:href="@{/}" th:class="${ActivePage == 'index'} ? 'atext active' : 'atext'">HOME</a>
+        </div>
+        <div class="menu">
+            <a th:href="@{/about}" th:class="${ActivePage == 'about-us'} ? 'atext active' : 'atext'">ABOUT</a>
+        </div> 
+        <div class="menu">
+            <a th:href="@{/contact}" th:class="${ActivePage == 'contact'} ? 'atext active' : 'atext'">CONTACT</a>
+        </div>
+        <div class="menu">
+            <a th:href="@{/login}" class="button-34">SIGN IN</a>
+        </div>
+    </div>
+</header>

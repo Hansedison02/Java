@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CVCT | Result</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link href="Style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <img class="Raw Score" style="width: 1920px; height: 900px; left: -8px; top: -8px; position: absolute" src="img/rawscore.png"/>     
+        <img class="BoldCompanyNameTypographyInitialsLogoRemovebgPreview5" style="width: 105px; height: 105px; left: 10px; top: -40px; position: absolute" src="img/Bold_Company_Name_Typography_Initials_Logo-removebg-preview.png" />
+        
+        <div class="SelamatNama" style="left: 690px; top: 280px; position: absolute; text-align: justify">
+            <span style="left: 170px; top: 15px; position: absolute; color: black; font-size: 26px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Selamat, </span>
+            <span style="left: 275px; top: 15px; position: absolute; color: #929267; font-size: 26px; font-family: Poppins; font-weight: 700; word-wrap: break-word" th:text="${authUser.username}"></span>
+            <span style="left: 128px; top: 55px; position: absolute; color: #707070; font-size: 20px; font-family: Poppins; font-weight: 550; word-wrap: break-word" th:text="${authUser.email}"></span>
+        </div>
+        
+        <div class="KamuBaruSajaMenyelesaikanAsesmenKreatifitasVerbalYukPahamiMaksudnya" style="left: 600px; top: 370px; position: absolute; text-align: justify; color: #707070; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+            Kamu baru saja menyelesaikan Asesmen Kreativitas Verbal. Yuk pahami maksudnya!
+        </div>
+        
+        <div class="KreatifitasVerbalSendiriSebetulnyaTerdiriDariEmpatAspekNihNamaKeempatAspekTersebutAdalahFluencyFlexibilityOriginalityElaboration" style="left: 580px; top: 430px; position: absolute; text-align: center">
+            <span style="color: white; font-size: 18px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+                Kreatifitas verbal sendiri sebetulnya terdiri dari empat aspek nih, <span th:text="${authUser.username}"></span>. Keempat Aspek tersebut adalah
+                <br/>
+            </span>
+            <span style="color: white; font-size: 18px; font-family: Poppins; font-style: italic; font-weight: 700; word-wrap: break-word">
+                Fluency, Flexibility, Originality, Elaboration.
+            </span>
+        </div>
+        
+        <div class="FluencyAdalahKemampuanKamuUntukMenghasilkanSejumlahIdeFlexibilityAdalahKemampuanKamuDalamMenyusunIdeIdeYangBersifatVariatifOriginalityAdalahKemampuanKamuUntukMemikirkanAtaupunMenghasilkanIdeIdeYangBersifatUnikDanBaruElaborationAdalahKemampuanKamuUntukMengembangkanIdeTambahanYangRelevan" style="left: 620px; top: 520px; position: absolute; text-align: center">
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 800; word-wrap: break-word">Fluency</span>
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 450; word-wrap: break-word">
+                adalah kemampuan kamu untuk menghasilkan sejumlah ide.
+                <br/>
+            </span>
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 800; word-wrap: break-word">Flexibility</span>
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 450; word-wrap: break-word">
+                adalah kemampuan kamu dalam menyusun ide-ide yang bersifat variatif.
+                <br/>
+            </span>
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 800; word-wrap: break-word">Originality</span>
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 450; word-wrap: break-word">
+                adalah kemampuan kamu untuk memikirkan ataupun menghasilkan ide-ide 
+                <br/>
+            </span>
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 450; word-wrap: break-word">
+                yang bersifat unik dan baru.
+                <br/>
+            </span>
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 800; word-wrap: break-word">Elaboration</span>
+            <span style="color: black; font-size: 18px; font-family: Poppins; font-weight: 450; word-wrap: break-word">
+                adalah kemampuan kamu untuk mengembangkan ide tambahan yang relevan.
+            </span>
+        </div>
+
+        <div class="BerdasarkanHasilAsesmenYangTelahKamuSelesaikanKamuMemiliki" style="width: 401px; left: 750px; top: 678px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 550; text-align: center; word-wrap: break-word">
+            Berdasarkan hasil asesmen yang telah kamu selesaikan, kamu memiliki 
+        </div>
+        
+        <div class="SkorFluencySebesarXxxXxxxSkorFlexibilitySebesarXxxXxxxSkorOriginalitySebesarXxxXxxxDanSkorElaborationSebesarXxxXxxx" style="width: 401px; left: 720px; top: 615px; position: absolute;">
+            <span style="left: 105px; top: 118px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 700; word-wrap: break-word">
+                - skor Fluency sebesar 
+            </span>
+            <span style="left: 320px; top: 122px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 700; word-wrap: break-word" th:text="${fluencyScore}"></span>
+            <span style="left: 105px; top: 130px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 700; word-wrap: break-word">
+                <br/>- skor Flexibility sebesar 
+            </span>
+            <span style="left: 320px; top: 152px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 700; word-wrap: break-word" th:text="${flexibilityScore}"></span>
+            <span style="left: 105px; top: 160px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 700; word-wrap: break-word">
+                <br/>- Skor Originality sebesar 
+            </span>
+            <span style="left: 320px; top: 182px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 700; word-wrap: break-word" th:text="${originalityScore}"></span>
+            <span style="left: 105px; top: 190px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 700; word-wrap: break-word">
+                <br/>- skor Elaboration sebesar 
+            </span>
+            <span style="left: 320px; top: 212px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 700; word-wrap: break-word" th:text="${elaborationScore}"></span>
+            <span style="color: white; font-size: 18px; font-family: Poppins; font-weight: 400; word-wrap: break-word">.</span>
+        </div>
+
+        <img class="2 People" style="width: 170px; height: 180px; left: 870px; top: 75px; position: absolute" src="img/2 people.png"/>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+    "type": "java",
+    "name": "CalculatorFX",
+    "request": "launch",
+    "mainClass": "CalculatorFX",
+    "projectName": "AdvCalculator_9055d105",
+    "cwd": "C:/Users/Darryl Davin/Java/JavaFX/AdvCalculator",
+    "vmArgs": [
+    "--module-path",
+    "C:/Program Files/Java/javafx-sdk-22/lib",
+    "--add-modules",
+    "javafx.controls,javafx.fxml"
+    ]
+    }
+    ]
+    }
